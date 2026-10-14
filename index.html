@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeQuest — Gamified Programming Learning Platform</title>
+  <meta name="description" content="A gamified programming learning platform for beginners mastering Python and C through lessons, quizzes, coding challenges, and achievement tracking.">
+  <meta name="theme-color" content="#0B1020">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  
+  <!-- Optional Google Fonts (Fallback to system fonts seamlessly) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="theme-dark">
+  <!-- Mobile Sidebar Overlay Backdrop -->
+  <div id="sidebar-overlay" class="sidebar-overlay" tabindex="-1" aria-hidden="true"></div>
+
+  <!-- Application Shell Layout -->
+  <div class="app-layout">
+    
+    <!-- Sidebar Navigation -->
+    <aside id="app-sidebar" class="app-sidebar" aria-label="Main Navigation">
+      <div class="sidebar-brand-wrapper">
+        <a href="#dashboard" class="brand-link" aria-label="CodeQuest Home">
+          <div class="brand-logo-hex">
+            <svg viewBox="0 0 64 64" width="34" height="34">
+              <polygon points="32,6 56,18 56,46 32,58 8,46 8,18" fill="#141B2D" stroke="url(#sidebar-brand-grad)" stroke-width="3"/>
+              <path d="M26,22 C23,22 22,24 22,27 C22,29 20,31 18,32 C20,33 22,35 22,37 C22,40 23,42 26,42" fill="none" stroke="#38BDF8" stroke-width="3" stroke-linecap="round"/>
+              <path d="M38,22 C41,22 42,24 42,27 C42,29 44,31 46,32 C44,33 42,35 42,37 C42,40 41,42 38,42" fill="none" stroke="#8B5CF6" stroke-width="3" stroke-linecap="round"/>
+              <polygon points="32,27 34,30.5 38,32 34,33.5 32,37 30,33.5 26,32 30,30.5" fill="#F59E0B"/>
+              <defs>
+                <linearGradient id="sidebar-brand-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#8B5CF6"/>
+                  <stop offset="100%" stop-color="#38BDF8"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div class="brand-text">
+            <span class="brand-name">Code<span class="text-purple">Quest</span></span>
+            <span class="brand-tagline">Learn. Code. Conquer.</span>
+          </div>
+        </a>
+        <button id="btn-toggle-sidebar" class="btn-collapse-sidebar" aria-label="Collapse Sidebar" title="Collapse sidebar">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="sidebar-nav" aria-label="Primary Navigation">
+        <div class="nav-section-title">CORE HUB</div>
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="#dashboard" class="nav-link active" data-route="dashboard">
+              <span class="nav-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+              </span>
+              <span class="nav-label">Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#learn" class="nav-link" data-route="learn">
+              <span class="nav-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+              </span>
+              <span class="nav-label">Learn</span>
+              <span class="nav-badge-pill">16</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#quizzes" class="nav-link" data-route="quizzes">
+              <span class="nav-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              </span>
+              <span class="nav-label">Quizzes</span>
+              <span class="nav-badge-pill">30</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#challenges" class="nav-link" data-route="challenges">
+              <span class="nav-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </span>
+              <span class="nav-label">Challenges</span>
+              <span class="nav-badge-pill">10</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="nav-section-title">COMMUNITY & PROGRESS</div>
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="#achievements" class="nav-link" data-route="achievements">
+              <span class="nav-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7a6 6 0 0 1-12 0z"/><path d="M6 9H2v2a4 4 0 0 0 4 4m12-6h4v2a4 4 0 0 1-4 4"/><line x1="9" y1="22" x2="15" y2="22"/><line x1="12" y1="15" x2="12" y2="22"/></svg>
+              </span>
+              <span class="nav-label">Achievements</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#leaderboard" class="nav-link" data-route="leaderboard">
+              <span class="nav-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+              </span>
+              <span class="nav-label">Leaderboard</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#profile" class="nav-link" data-route="profile">
+              <span class="nav-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </span>
+              <span class="nav-label">Profile & Settings</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Sidebar Footer -->
+      <div class="sidebar-footer">
+        <div class="viva-badge">
+          <span class="viva-indicator"></span>
+          <span class="viva-text">College Viva Edition</span>
+        </div>
+        <span class="sidebar-version">v1.0.0 Static Build</span>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="app-main-wrapper">
+      
+      <!-- Top Application Header -->
+      <header id="app-header" class="app-topbar">
+        <div class="topbar-left">
+          <button id="mobile-menu-btn" class="mobile-hamburger-btn" aria-label="Open Navigation Menu">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+          <div class="topbar-brand-mobile">
+            <span class="brand-name">Code<span class="text-purple">Quest</span></span>
+          </div>
+        </div>
+
+        <!-- Topbar Stats Pills -->
+        <div class="topbar-right">
+          <!-- Streak Pill -->
+          <div class="topbar-stat-pill pill-streak" title="Current Daily Streak">
+            <svg viewBox="0 0 24 24" width="16" height="16" class="stat-icon-flame" fill="currentColor"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+            <span id="topbar-streak">0d</span>
+          </div>
+
+          <!-- XP Pill -->
+          <div class="topbar-stat-pill pill-xp" title="Total Experience Points">
+            <svg viewBox="0 0 24 24" width="16" height="16" class="stat-icon-zap" fill="currentColor"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            <span id="topbar-xp">0 XP</span>
+          </div>
+
+          <!-- Level Badge -->
+          <div class="topbar-stat-pill pill-level" id="topbar-level" title="Current Level">
+            Lvl 1
+          </div>
+
+          <!-- User Profile Action -->
+          <a href="#profile" class="topbar-user-link" aria-label="Go to Profile">
+            <span class="topbar-username" id="topbar-username">Cadet</span>
+            <div class="topbar-avatar" id="topbar-avatar">CQ</div>
+          </a>
+        </div>
+      </header>
+
+      <!-- Main Single Page Views Container -->
+      <main id="app-main" class="app-main-content">
+        <!-- 1. Dashboard View -->
+        <section id="dashboard-view" class="view-panel" aria-label="Dashboard View"></section>
+
+        <!-- 2. Learn View -->
+        <section id="learn-view" class="view-panel hidden" aria-label="Learn View" aria-hidden="true"></section>
+
+        <!-- 3. Quizzes View -->
+        <section id="quizzes-view" class="view-panel hidden" aria-label="Quizzes View" aria-hidden="true"></section>
+
+        <!-- 4. Challenges View -->
+        <section id="challenges-view" class="view-panel hidden" aria-label="Challenges View" aria-hidden="true"></section>
+
+        <!-- 5. Achievements View -->
+        <section id="achievements-view" class="view-panel hidden" aria-label="Achievements View" aria-hidden="true"></section>
+
+        <!-- 6. Leaderboard View -->
+        <section id="leaderboard-view" class="view-panel hidden" aria-label="Leaderboard View" aria-hidden="true"></section>
+
+        <!-- 7. Profile View -->
+        <section id="profile-view" class="view-panel hidden" aria-label="Profile and Settings View" aria-hidden="true"></section>
+      </main>
+
+    </div><!-- /.app-main-wrapper -->
+  </div><!-- /.app-layout -->
+
+  <!-- Mobile Bottom Navigation Bar -->
+  <nav class="mobile-bottom-nav" aria-label="Mobile Navigation">
+    <a href="#dashboard" class="mobile-nav-item active" data-route="dashboard">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      <span>Dash</span>
+    </a>
+    <a href="#learn" class="mobile-nav-item" data-route="learn">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      <span>Learn</span>
+    </a>
+    <a href="#quizzes" class="mobile-nav-item" data-route="quizzes">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      <span>Quiz</span>
+    </a>
+    <a href="#challenges" class="mobile-nav-item" data-route="challenges">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      <span>Code</span>
+    </a>
+    <a href="#profile" class="mobile-nav-item" data-route="profile">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      <span>You</span>
+    </a>
+  </nav>
+
+  <!-- ============================================================== -->
+  <!-- MODALS -->
+  <!-- ============================================================== -->
+
+  <!-- 1. First-Time Onboarding Modal -->
+  <div id="onboarding-modal" class="modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="onboarding-heading">
+    <div class="modal-dialog modal-md modal-onboarding">
+      <div class="onboarding-badge-hex">
+        <svg viewBox="0 0 24 24" width="36" height="36" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <h2 id="onboarding-heading" class="modal-title">Welcome to CodeQuest!</h2>
+      <p class="modal-subtext">Set up your adventurer profile to begin your gamified programming quest. All progress is securely stored locally in your browser.</p>
+
+      <form id="onboarding-form" class="modal-form">
+        <div class="form-group">
+          <label for="onboarding-name" class="form-label">Cadet Display Name</label>
+          <input type="text" id="onboarding-name" class="form-input" required maxlength="30" placeholder="e.g. Aria Stark or BinaryKnight" value="Cadet Coder">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Choose Your Starting Track</label>
+          <div class="onboarding-track-grid">
+            <label class="track-choice-radio">
+              <input type="radio" name="onboardingTrack" value="python" checked>
+              <div class="track-choice-box">
+                <span class="track-choice-name">Python 3</span>
+                <span class="track-choice-desc">Beginner friendly, data science, algorithms</span>
+              </div>
+            </label>
+            <label class="track-choice-radio">
+              <input type="radio" name="onboardingTrack" value="c">
+              <div class="track-choice-box">
+                <span class="track-choice-name">C Systems</span>
+                <span class="track-choice-desc">Low-level mastery, memory, pointers, performance</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Daily Learning Goal</label>
+          <div class="goal-radio-row">
+            <label class="goal-radio-chip active">
+              <input type="radio" name="onboardingGoal" value="10" checked>
+              10 mins
+            </label>
+            <label class="goal-radio-chip">
+              <input type="radio" name="onboardingGoal" value="20">
+              20 mins
+            </label>
+            <label class="goal-radio-chip">
+              <input type="radio" name="onboardingGoal" value="30">
+              30 mins
+            </label>
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button type="submit" class="btn btn-primary btn-xl btn-block">
+            Start My Quest 🚀
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 2. Reset Demo Data Confirmation Modal -->
+  <div id="reset-confirm-modal" class="modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="reset-heading">
+    <div class="modal-dialog modal-sm">
+      <div class="danger-icon-circle">
+        <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+      </div>
+      <h3 id="reset-heading" class="modal-title">Reset Demo Data?</h3>
+      <p class="modal-subtext">
+        Are you sure you want to reset all your learning progress? This will clear your accumulated XP, streak count, completed lessons, quizzes, and solved challenges.
+      </p>
+      <p class="text-sm text-muted">This action only deletes CodeQuest LocalStorage keys and cannot be undone.</p>
+
+      <div class="modal-actions-row">
+        <button class="btn btn-secondary" id="btn-cancel-reset">Cancel</button>
+        <button class="btn btn-danger" id="btn-confirm-reset">Yes, Reset All Progress</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Level-Up Celebration Modal -->
+  <div id="levelup-modal" class="modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="levelup-heading">
+    <div class="modal-dialog modal-sm modal-levelup">
+      <div class="levelup-burst">
+        <svg viewBox="0 0 24 24" width="56" height="56" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <span class="levelup-tag">PROMOTION UNLOCKED</span>
+      <h2 id="levelup-heading" class="levelup-big-title">LEVEL UP!</h2>
+      <div class="levelup-number" id="levelup-number">LEVEL 2</div>
+      <p class="levelup-rank-title" id="levelup-title">Syntax Apprentice</p>
+      <p class="levelup-subtext">Your consistency and mastery have raised your coder rank. Keep completing daily quests and lessons to reach Master Hacker!</p>
+
+      <button class="btn btn-gold btn-xl btn-block" id="btn-close-levelup">
+        Claim New Title & Continue
+      </button>
+    </div>
+  </div>
+
+  <!-- Global Floating Toast Notification Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- JavaScript Modules in Dependency Order -->
+  <script src="js/data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/lessons.js"></script>
+  <script src="js/quizzes.js"></script>
+  <script src="js/challenges.js"></script>
+  <script src="js/achievements.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
